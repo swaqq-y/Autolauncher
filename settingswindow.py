@@ -4,5 +4,5 @@ import json
 settingsfile = open('settings.json')
 settings_json = settingsfile.read()
 settings = json.loads(settings_json)
-waytozapret = ttk.Entry()
-waytozapret.pack()
+pathtozapret = ttk.Entry()
+pathtozapret.pack()

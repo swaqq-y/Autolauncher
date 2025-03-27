@@ -1,3 +1,5 @@
 {
-  "pathtozapret" : ""
+  "pathtozapret" : "",
+  "listofpluginsbd" : "./plugins.txt",
+  "listofthemesbd" : "./themes.txt"
 }
