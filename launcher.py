@@ -20,11 +20,14 @@ class betterbutton:
 
 
 buttonslist = ['Repair BetterDiscord', 'Update ZapretDiscordYoutube', 'Download BetterDiscord Plugins', 'Download BetterDiscord Themes']
+buttonsway = {'Repair BetterDiscord':'./scripts/repair_betterdiscord.py', 'Update ZapretDiscordYoutube':''}
 listbutton = []
 
+for button in buttonslist:
+    bttn = betterbutton()
+    bttn.name = button
+    bttn.script = buttonsway[button]
 
-
-# Создание интерфейса
 root = tk.Tk()
 root.title("AutoLauncher")
 root.geometry('600x400')
