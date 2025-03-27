@@ -1,7 +1,7 @@
 @echo off
 title Установщик зависимостей
 color 0A
-
+chcp 65001
 echo Проверка установки Python...
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
@@ -16,7 +16,7 @@ echo Обновление pip...
 python -m pip install --upgrade pip
 
 echo Установка зависимостей...
-pip install requests pillow pyinstaller tkinter pathlib json subprocess
+pip install requests pillow pyinstaller pathlib subprocess tkinter
 
 if %errorlevel% equ 0 (
     echo Успешно установлены все зависимости!

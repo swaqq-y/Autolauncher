@@ -5,6 +5,7 @@ from tkinter.messagebox import showinfo
 
 root = tk.Tk()
 root.title('Settings')
+root.iconbitmap("./icon.ico")
 root.geometry('300x200')
 settingsfile = open('settings.json')
 settings_json = settingsfile.read()

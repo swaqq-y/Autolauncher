@@ -2,9 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 import subprocess
 import sys
-import os
 
 root = tk.Tk()
+root.iconbitmap("./icon.ico")
 root.title("AutoLauncher")
 root.geometry('600x400')
 root.title('AutoLauncher')

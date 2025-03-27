@@ -40,4 +40,4 @@ if betterdiscord_path.exists() and os.path.getsize(filepath) > 0:
     with open(config_path, 'w', encoding='utf-8') as file:
         json.dump(config, file, ensure_ascii=False, indent=4)
 else:
-    print("Файл плагинов или путь к betterdiscord пусты...")
+    print("Файл плагинов или путь к BetterDiscord пусты...")
