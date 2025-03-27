@@ -1,5 +1,6 @@
 {
-  "pathtozapret" : "",
-  "listofpluginsbd" : "./plugins.txt",
-  "listofthemesbd" : "./themes.txt"
+    "pathtozapret": "",
+    "betterdiscordpath": "",
+    "lastplugin": "0",
+    "lasttheme": "0"
 }

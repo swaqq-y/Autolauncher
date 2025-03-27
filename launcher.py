@@ -7,6 +7,7 @@ root = tk.Tk()
 root.title("AutoLauncher")
 root.geometry('600x400')
 root.title('AutoLauncher')
+import os
 class betterbutton:
     def __init__(self, name="", script=""):
         self.name = name
@@ -18,18 +19,13 @@ class betterbutton:
         exec(code)
 
 
-buttonslist = ['Repair BetterDiscord', 'Update ZapretDiscordYoutube']
-#buttonslist = ['Repair BetterDiscord', 'Update ZapretDiscordYoutube', 'Download BetterDiscord Plugins', 'Download BetterDiscord Themes']
-buttonsway = {'Repair BetterDiscord':'./scripts/repair_betterdiscord.py', 'Update ZapretDiscordYoutube':'./scripts/updatezapret.py'}
+buttonslist = ['Repair BetterDiscord', 'Update ZapretDiscordYoutube', 'Download BetterDiscord Plugins', 'Download BetterDiscord Themes']
+buttonsway = {'Repair BetterDiscord':'./scripts/repair_betterdiscord.py', 'Update ZapretDiscordYoutube':'./scripts/updatezapret.py', 'Download BetterDiscord Plugins':'./scripts/download_bd_plugins.py', 'Download BetterDiscord Themes':'./scripts/download_bd_themes.py'}
 listbutton = []
 
 for button in buttonslist:
     bttn = betterbutton(name=button, script=buttonsway[button])
     bttn.btn.pack()
-
-
-
-
 
 root.mainloop()
 
