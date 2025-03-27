@@ -1,9 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-import threading
-from corescripts.scripts import repair_betterdiscord
 import subprocess
-safe_globals = {"__builtins__": None}  # Запрещаем встроенные функции (open, eval и т. д.)
+safe_globals = {"__builtins__": None}
 safe_locals = {}
 class betterbutton:
     name = ''
