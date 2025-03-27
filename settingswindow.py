@@ -18,6 +18,8 @@ pathtobd = ttk.Label(text="Enter BetterDiscord path")
 pathtobd.pack()
 pathtobetterdiscord = ttk.Entry()
 pathtobetterdiscord.pack()
+def info():
+    showinfo(title="With love from Swaqq-y", message="Version: {}\n Thanks for downloading.\n (* ^ ω ^)".format(config["version"]))
 def sucsess():
     showinfo(title="Успешно завершено", message="Успешно задано")
 def setjsonzapret():
@@ -32,8 +34,12 @@ def setjsonbd():
     sucsess()
 zapretbtn = ttk.Button(text="Set ZapretDiscordYoutube path", command=setjsonzapret)
 zapretbtn.pack()
+
 betterdiscordbtn = ttk.Button(text="Set BetterDiscord path", command=setjsonbd)
 betterdiscordbtn.pack()
-
+labeeel = ttk.Label(text="\n")
+labeeel.pack()
+appinfo = ttk.Button(text="App info", command=info)
+appinfo.pack()
 
 root.mainloop()

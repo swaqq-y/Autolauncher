@@ -18,6 +18,7 @@ class betterbutton:
         code = file.read()
         exec(code)
 
+
 def opensettings():
     subprocess.run([sys.executable, "settingswindow.py"])
 
@@ -32,6 +33,8 @@ for button in buttonslist:
 
 settings = ttk.Button(text="Settings", command=opensettings)
 settings.pack(anchor="s")
+
+
 
 root.mainloop()
 
