@@ -16,29 +16,29 @@ plugins = []
 tmp = ''
 count =0
 count += int(config['lasttheme'])
-if betterdiscord_path != '':
-    if betterdiscord_path.exists() and os.path.getsize(filepath) > 0:
-        with open(filepath, 'r') as pluginsfile:
-            for letter in pluginsfile.read():
-                if letter != ';':
-                    tmp += letter
-                else:
-                    plugins.append(tmp.strip())
-                    tmp = ''
 
-        os.makedirs(themespath, exist_ok=True)
+if betterdiscord_path.exists() and os.path.getsize(filepath) > 0:
+    with open(filepath, 'r') as pluginsfile:
+        for letter in pluginsfile.read():
+            if letter != ';':
+                tmp += letter
+            else:
+                plugins.append(tmp.strip())
+                tmp = ''
 
-        for i in plugins:
-            response = requests.get(i)
-            theme_name = i.split('/')[-1].split('?')[0] + '{}.theme.css'.format(count)
-            pathfortheme = themespath / theme_name
-            count += 1
-            if response.status_code == 200:
-                with open(pathfortheme, 'wb') as f:
-                    f.write(response.content)
-                    print(f'Тема {theme_name} скачана!')
-        config["lasttheme"] = str(count)
-        with open(config_path, 'w', encoding='utf-8') as file:
-            json.dump(config, file, ensure_ascii=False, indent=4)
-    else:
-        showwarning(title='Warning', message='Path to BetterDiscord is empty!')
+    os.makedirs(themespath, exist_ok=True)
+
+    for i in plugins:
+        response = requests.get(i)
+        theme_name = i.split('/')[-1].split('?')[0] + '{}.theme.css'.format(count)
+        pathfortheme = themespath / theme_name
+        count += 1
+        if response.status_code == 200:
+            with open(pathfortheme, 'wb') as f:
+                f.write(response.content)
+                print(f'Тема {theme_name} скачана!')
+    config["lasttheme"] = str(count)
+    with open(config_path, 'w', encoding='utf-8') as file:
+        json.dump(config, file, ensure_ascii=False, indent=4)
+else:
+    showwarning(title='Warning', message='Path to BetterDiscord is empty!')
