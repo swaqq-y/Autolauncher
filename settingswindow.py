@@ -2,6 +2,7 @@ from tkinter import ttk
 import tkinter as tk
 import json
 from tkinter.messagebox import showinfo
+import sys
 
 root = tk.Tk()
 root.title('Settings')
@@ -22,7 +23,7 @@ pathtobetterdiscord.pack()
 def info():
     showinfo(title="With love from Swaqq-y", message="Version: {}\n Thanks for downloading.\n (* ^ ω ^)".format(config["version"]))
 def sucsess():
-    showinfo(title="Успешно завершено", message="Успешно задано")
+    showinfo(title="Done!", message="Sucsess!")
 def setjsonzapret():
     config["pathtozapret"] = pathtozapret.get()
     with open("./settings.json", 'w', encoding='utf-8') as file:
