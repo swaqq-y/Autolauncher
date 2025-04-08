@@ -17,7 +17,7 @@ echo Обновление pip...
 python -m pip install --upgrade pip
 
 echo Установка зависимостей...
-pip install requests pathlib    
+pip install requests pathlib
 if %errorlevel% equ 0 (
     echo Успешно установлены все зависимости!
 ) else (
