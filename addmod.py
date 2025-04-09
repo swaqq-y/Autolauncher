@@ -3,7 +3,17 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter.messagebox import showinfo, showwarning, showerror
 from pathlib import Path
+import json
+
 root = tk.Tk()
+# def addmod():
+#     current_file = Path(__file__).resolve()
+#     pathtoscripts = Path(current_file.parent) / 'scripts.json'
+#     f = open(pathtoscripts)
+#     configraw = f.read()
+#     config = json.load(configraw)
+#     config['']
+
 def addmodfinal():
     if Path(scriptentry.get()).exists() and Path(scriptentry.get()).is_file() and modname.get() != '':
         showinfo(title="Later =3", message="In version 2.0 =3")
