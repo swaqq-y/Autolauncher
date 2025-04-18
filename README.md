@@ -3,4 +3,4 @@ Idk. A launcher on python3 for scripts
 
 
 
-### Version 1.3.1
+### Version 2.0

@@ -1,3 +1,6 @@
 {
-
+    "script1": {
+        "name": "Check Updates",
+        "scriptname": "./scripts/checkupdates.py"
+    }
 }

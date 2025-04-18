@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import tkinter as tk
 from tkinter.messagebox import showinfo
+import shutil
 def get_github_repo_files():
     url = f"https://api.github.com/repos/swaqq-y/Autolauncher/contents/"
     headers = {

@@ -2,7 +2,6 @@ from tkinter import ttk
 import tkinter as tk
 import json
 from tkinter.messagebox import showinfo
-import sys
 
 root = tk.Tk()
 root.title('Settings')
@@ -20,8 +19,9 @@ pathtobd = ttk.Label(text="Enter BetterDiscord path")
 pathtobd.pack()
 pathtobetterdiscord = ttk.Entry()
 pathtobetterdiscord.pack()
+
 def info():
-    showinfo(title="With love from Swaqq-y", message="Version: {}\n Thanks for downloading.\n (* ^ ω ^)".format(config["version"]))
+    showinfo(title="With love from Swaqq-y", message="Version: {}\n Thanks for downloading.\n (´｡• ω •｡`) ".format(config["version"]))
 def sucsess():
     showinfo(title="Done!", message="Sucsess!")
 def setjsonzapret():
