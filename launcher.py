@@ -33,7 +33,7 @@ def opensettings():
 def openaddmod():
     subprocess.run([sys.executable, "addscript.py"])
 buttonslist = ['Repair BetterDiscord', 'Update ZapretDiscordYoutube', 'Download BetterDiscord Plugins', 'Download BetterDiscord Themes', "Check AutoLaucher Updates"]
-buttonsway = {'Repair BetterDiscord':'./scripts/repair_betterdiscord.py', 'Update ZapretDiscordYoutube':'./scripts/updatezapret.py', 'Download BetterDiscord Plugins':'./scripts/download_bd_plugins.py', 'Download BetterDiscord Themes':'./scripts/download_bd_themes.py', 'Check AutoLaucher Updates' : './scripts/checkupdates.py'}
+buttonsway = {'Repair BetterDiscord':'./scripts/repair_betterdiscord.py', 'Update ZapretDiscordYoutube':'./scripts/updatezapret.py', 'Download BetterDiscord Plugins':'./scripts/download_bd_plugins.py', 'Download BetterDiscord Themes':'./scripts/download_bd_themes.py', 'Check AutoLaucher Updates' : './checkupdates.py'}
 listbutton = []
 
 pathtoscripts = Path('./scripts.json')
@@ -41,22 +41,24 @@ try:
     if pathtoscripts.is_file() and pathtoscripts.exists():
         with open(pathtoscripts) as f:
             scripts = json.load(f)
-        lasti = 0
-        lastscript = int(config['lastscript'])
-        lastscript += 1
-        for i in range(lastscript):
-            if i == 0:
-                i += 1
-            if lasti == i:
-                i += 1
-                continue
-            buttonslist.append(scripts["script" + str(i)]['name'])
-            buttonsway[scripts["script" + str(i)]['name']] = scripts["script" + str(i)]['scriptname']
-            lasti = i
+        if scripts != {}:
+            lasti = 0
+            lastscript = int(config['lastscript'])
+            lastscript += 1
+            for i in range(lastscript):
+                if i == 0:
+                    i += 1
+                if lasti == i:
+                    i += 1
+                    continue
+                buttonslist.append(scripts["script" + str(i)]['name'])
+                buttonsway[scripts["script" + str(i)]['name']] = scripts["script" + str(i)]['scriptname']
+                lasti = i
 
-    for button in buttonslist:
-        bttn = betterbutton(name=button, script=buttonsway[button])
-        bttn.btn.pack()
+        for button in buttonslist:
+            bttn = betterbutton(name=button, script=buttonsway[button])
+            bttn.btn.pack()
+
 except KeyError:
     lastscript = int(config['lastscript'])
     config['lastscript'] = str(lastscript - 1)
